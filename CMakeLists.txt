@@ -1,13 +1,12 @@
 project (HELLO)
 enable_testing()
 
-add_executable (main main.cc)
+if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
+  message(FATAL_ERROR "In-source builds are not allowed")
+endif()
 
-add_test(NAME main_succeed 
-         COMMAND ./main succeed
+add_test(NAME main_1
+         COMMAND ./bin/main_1 succeed
          WORKING_DIRECTORY ${PROJECT_BINARY_DIR})
 
-add_test(NAME main_fail
-         COMMAND ./main fail
-         WORKING_DIRECTORY ${PROJECT_BINARY_DIR})
 
