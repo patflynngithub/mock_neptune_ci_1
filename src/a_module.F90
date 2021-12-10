@@ -2,7 +2,7 @@ module a_module
 
 contains
 
-function success_or_failure
+function success_or_failure()
 
    integer :: success_or_failure
 
