@@ -1,0 +1,20 @@
+name: First Action for NEPTUNE CI mockup
+
+on:
+  workflow_dispatch:
+    branches: [ develop ]
+
+env:
+  CI_SERVER: true
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: build
+      run:  make
+    - name: execute
+      run: ./build/bin/main_1 succeed
