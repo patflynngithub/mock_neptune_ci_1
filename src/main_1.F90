@@ -1,17 +1,11 @@
 program for_main
 
-integer :: num_cmdline_args
-character :: param(10)
+use a_module
 
-write(*,*) "program/test main_1"
+integer :: retval
 
-num_cmdline_args = command_argument_count()
-write(*,*) "# of command line arguments: ", num_cmdline_args
+retval = success_or_failure()
 
-if (num_cmdline_args /= 1) then
-   write(*,*) "Error: exactly one command line parameter is required (fail or succeed)"
-end if
-
-stop 0
+write(*,*) "success or failure = ", retval
 
 end program
