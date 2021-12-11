@@ -9,7 +9,7 @@ function success_or_failure()
    integer :: num_cmdline_args
    character(10) :: param
    
-   write(*,*) "main module"
+   write(*,*) "main module: first feature of Release 1.0.0"
    
    num_cmdline_args = command_argument_count()
    write(*,*) "# of command line arguments: ", num_cmdline_args
