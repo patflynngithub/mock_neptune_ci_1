@@ -3,7 +3,7 @@ name: Testing when pushing to a working branch
 on:
   push:
     branches: 
-      - 'Iss[0-9]+-'
+      - 'Iss[0-9]+-*'
 env:
   CI_SERVER: true
 
