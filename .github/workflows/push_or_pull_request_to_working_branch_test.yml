@@ -1,8 +1,12 @@
-name: First Action for NEPTUNE CI mockup
+name: Testing for push or pull_request_to a working branch
 
 on:
-  workflow_dispatch:
-    branches: [ develop ]
+  push:
+    branches:
+      - 'Iss[0-9]+-*'
+  pull_request:
+    branches:
+      - 'Iss[0-9]+-*'
 
 env:
   CI_SERVER: true
@@ -18,3 +22,4 @@ jobs:
       run:  make
     - name: execute
       run: ./build/bin/main_1 succeed
+
