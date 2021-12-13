@@ -1,0 +1,25 @@
+name: Testing for push or pull_request to a release branch
+
+on:
+  push:
+    branches:
+      - 'release/**'
+  pull_request:
+    branches:
+      - 'release/**'
+
+env:
+  CI_SERVER: true
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: build
+      run:  make
+    - name: execute
+      run: ./build/bin/main_1 succeed
+
