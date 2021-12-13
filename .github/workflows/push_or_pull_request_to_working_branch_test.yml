@@ -1,9 +1,13 @@
-name: Testing when pushing to a working branch
+name: Testing for push or pull_request_to a working branch
 
 on:
   push:
-    branches: 
+    branches:
       - 'Iss[0-9]+-*'
+  pull_request:
+    branches:
+      - 'Iss[0-9]+-*'
+
 env:
   CI_SERVER: true
 
