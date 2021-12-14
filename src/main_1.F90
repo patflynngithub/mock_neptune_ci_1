@@ -12,4 +12,12 @@ retval = success_or_failure()
 
 write(*,*) "success or failure = ", retval
 
+if (retval == 1) then
+  stop 1
+else if (retval == 2) then
+  stop 2
+else
+  stop 0
+endif 
+
 end program
