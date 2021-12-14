@@ -21,6 +21,5 @@ jobs:
     - name: build
       run:  make
     - name: execute
-      # run: ./build/bin/main_1 succeed
-      run: ./build/bin/main_1 failure
+      run: ./build/bin/main_1 succeed
 
