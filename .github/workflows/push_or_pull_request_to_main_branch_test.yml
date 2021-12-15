@@ -22,4 +22,3 @@ jobs:
       run:  make
     - name: execute
       run:  ./build/bin/main_1 succeed
-
