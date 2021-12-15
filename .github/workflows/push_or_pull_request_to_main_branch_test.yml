@@ -12,7 +12,7 @@ env:
   CI_SERVER: true
 
 jobs:
-  build:
+  build_main:
 
     runs-on: ubuntu-latest
 
@@ -21,6 +21,5 @@ jobs:
     - name: build
       run:  make
     - name: execute
-      # run: ./build/bin/main_1 succeed
-      run: ./build/bin/main_1 fail
+      run: ./build/bin/main_1 succeed
 
