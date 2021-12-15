@@ -12,7 +12,7 @@ env:
   CI_SERVER: true
 
 jobs:
-  build:
+  build_release:
 
     runs-on: ubuntu-latest
 
