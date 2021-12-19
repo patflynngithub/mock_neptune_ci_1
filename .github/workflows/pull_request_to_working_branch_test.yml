@@ -1,9 +1,6 @@
-name: Testing for push or pull_request_to a working branch
+name: Testing for pull_request_to a working branch
 
 on:
-  push:
-    branches:
-      - 'Iss[0-9]+-*'
   pull_request:
     branches:
       - 'Iss[0-9]+-*'
