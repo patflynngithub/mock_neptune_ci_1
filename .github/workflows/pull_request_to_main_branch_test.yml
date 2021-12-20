@@ -18,4 +18,4 @@ jobs:
     - name: build
       run:  make
     - name: execute
-      run:  ./build/bin/main_1 fail
+      run:  ./build/bin/main_1 succeed
