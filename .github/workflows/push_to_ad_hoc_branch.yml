@@ -1,9 +1,9 @@
-name: Testing for pull_request_to a working branch
+name: Testing for push to generate-output-file ad hoc branch
 
 on:
-  pull_request:
+  push:
     branches:
-      - 'Iss[0-9]+-*'
+      - generate-output-file
 
 env:
   CI_SERVER: true
