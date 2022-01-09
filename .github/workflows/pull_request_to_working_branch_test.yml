@@ -1,9 +1,11 @@
 name: Testing for pull_request_to a working branch
 
 on:
+  workflow_dispatch:
+
   pull_request:
     branches:
-      - 'Iss[0-9]+-*'
+      - 'Iss[0-9]+-*    '
 
 env:
   CI_SERVER: true
@@ -17,6 +19,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: build
       run:  make
-    - name: execute
-      run: ./build/bin/main_1 succeed
+    - name: run_test
+      run:  ./build/bin/main_1 succeed output_matrix_file_accurate
 

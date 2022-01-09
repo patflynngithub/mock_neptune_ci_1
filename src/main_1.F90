@@ -15,18 +15,26 @@ program for_main
 
 use a_module
 
-integer :: retval
+implicit none
 
-retval = success_or_failure()
+integer :: success_code
+integer :: error_code
 
-write(*,*) "success or failure = ", retval
+! is an execution success or failure desired?
+success_code = success_or_failure()
+write(*,*) "success or failure code = ", success_code
 
-if (retval == 1) then
+if (success_code == 1) then
   stop 1
-else if (retval == 2) then
+else if (success_code == 2) then
   stop 2
-else
-  stop 0
 endif 
+
+! -------------------------
+
+! Is an output matrix file desired? If so, accurate or inaccurate (QA)?
+call output_matrix_file(error_code)
+
+write(*,*) "Output matrix file error code = ", error_code
 
 end program
