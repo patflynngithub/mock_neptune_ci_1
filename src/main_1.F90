@@ -17,24 +17,13 @@ use a_module
 
 implicit none
 
-integer :: success_code
-integer :: error_code
-
 ! is an execution success or failure desired?
-success_code = success_or_failure()
-write(*,*) "success or failure code = ", success_code
+call success_or_failure()
 
-if (success_code == 1) then
-  stop 1
-else if (success_code == 2) then
-  stop 2
-endif 
+!-------------------------
 
-! -------------------------
-
-! Is an output matrix file desired? If so, accurate or inaccurate (QA)?
-call output_matrix_file(error_code)
-
-write(*,*) "Output matrix file error code = ", error_code
+! Is an output matrix file desired? If so, accurate or inaccurate (Quality Assurance)?
+call output_matrix_file()
 
 end program
+
