@@ -19,7 +19,7 @@ if matrix_sum == 0:
   print("matrix.txt is accurate")
   exit_code = 0
 else:
-  # non-zero matrixis treated as inaccurate
+  # non-zero matrix is treated as inaccurate
   print("matrix.txt is inaccurate")
   exit_code = 1
 
