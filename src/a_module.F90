@@ -61,7 +61,7 @@ subroutine output_matrix_file()
    
    if (trim(adjustl(param)) == "output_matrix_file_error") then
       write(*,*) "OVERRIDING request for successful execution"
-      write(*,*) "error creating/writing matrix file (by request)"
+      write(*,*) "error creating/writing matrix file (error by request)"
       stop 1
    else if (trim(adjustl(param)) == "output_matrix_file_none") then
       write(*,*) "not outputting matrix file by request"
