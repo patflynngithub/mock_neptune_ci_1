@@ -18,5 +18,5 @@ jobs:
     - name: build
       run:  make
     - name: run_test
-      run:  ./build/bin/main_1 succeed output_matrix_file_error
+      run:  ./build/bin/main_1 succeed output_matrix_file_error && echo $?
 
