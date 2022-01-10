@@ -15,18 +15,15 @@ program for_main
 
 use a_module
 
-integer :: retval
+implicit none
 
-retval = success_or_failure()
+! is an execution success or failure desired?
+call success_or_failure()
 
-write(*,*) "success or failure = ", retval
+!-------------------------
 
-if (retval == 1) then
-  stop 1
-else if (retval == 2) then
-  stop 2
-else
-  stop 0
-endif 
+! Is an output matrix file desired? If so, accurate or inaccurate (Quality Assurance)?
+call output_matrix_file()
 
 end program
+
