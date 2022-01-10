@@ -32,3 +32,7 @@ jobs:
     - name: check_matrix
       run:  python check_matrix.py
       run:  ./build/bin/main_1 succeed output_matrix_file_accurate
+    - name: show_matrix
+      run:  cat matrix.txt
+    - name: check_matrix
+      run:  python check_matrix.py
