@@ -9,7 +9,7 @@ env:
   CI_SERVER: true
 
 jobs:
-  build_working:
+  build_adhoc:
 
     runs-on: ubuntu-latest
 
