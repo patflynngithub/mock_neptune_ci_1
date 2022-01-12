@@ -1,4 +1,4 @@
-This file is for artificially update the branch in to be able to test GitHub CI activities
+This file is for artificially make a change to the branch in to be able to test GitHub CI activities
 
-1/11/21  9:52am
+1/12/21  9:33am
 
