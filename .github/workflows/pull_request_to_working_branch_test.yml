@@ -26,7 +26,7 @@ jobs:
     - name: build
       run:  make
     - name: run_test
-      run:  ./build/bin/main_1 succeed output_matrix_file_accurate bad_timing
+      run:  ./build/bin/main_1 succeed output_matrix_file_accurate good_timing
     - name: show_matrix
       run:  cat matrix.txt
     - name: check_matrix
