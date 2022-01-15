@@ -10,19 +10,7 @@ contains
 !
 subroutine success_or_failure()
 
-   integer :: num_cmdline_args
    character(10) :: param
-   
-   num_cmdline_args = command_argument_count()
-   
-   if (num_cmdline_args /= 2) then
-      write(*,*) "# of command line arguments: ", num_cmdline_args
-      write(*,*) "Error: exactly two command line parameters are required"
-      write(*,*) "       - fail/succeed            (first parameter)"
-      write(*,*) "       - output_matrix_file_*    (second parameter)"
-      write(*,*) "             * = none, accurate, inaccurate or error"
-      stop 2
-   end if
    
    call get_command_argument(1,param)
    
@@ -57,7 +45,7 @@ subroutine output_matrix_file()
    integer       :: unit_num
    
    ! get command argument to see if and how should output matrix file
-   call get_command_argument(2,param)
+   call get_command_argument(2, param)
    
    if (trim(adjustl(param)) == "output_matrix_file_error") then
       write(*,*) "OVERRIDING request for successful execution"
@@ -88,6 +76,41 @@ subroutine output_matrix_file()
    close(unit_num)
    
 end subroutine output_matrix_file
+
+subroutine good_or_bad_timing()
+
+   character(30) :: param
+   integer       :: timing
+   integer       :: unit_num
+   
+   ! get command argument to see if should simulate good or bad timing
+   call get_command_argument(3, param)
+   
+   if (trim(adjustl(param)) == "good_timing") then
+      write(*,*) "good timing requested"
+      timing = 50
+   else if (trim(adjustl(param)) == "bad_timing") then
+      write(*,*) "bad timing requested"
+      timing = 5000
+   else
+      write(*,*) "error: third parameter should be good_timing or bad_timing"
+      stop 2
+   endif
+
+   ! output timing to nep.error.000000 file
+   unit_num = 1
+   open(unit_num, file="nep.error.000000")
+  
+   write(unit_num,*) "instance               1"
+   write(unit_num,*) "maxval(te)", timing
+   write(unit_num,*) "minval(te)", timing
+   write(unit_num,*) "all      4   6   9"
+   write(unit_num,*) "**NEPTUNE Simulation Finished**"
+   write(unit_num,*) "neptune_fcst done"
+
+   close(unit_num)
+
+end subroutine good_or_bad_timing
 
 end module a_module
 
