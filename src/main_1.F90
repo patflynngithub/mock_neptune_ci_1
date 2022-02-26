@@ -15,18 +15,35 @@ program for_main
 
 use a_module
 
-integer :: retval
+implicit none
 
-retval = success_or_failure()
+integer :: num_cmdline_args
 
-write(*,*) "success or failure = ", retval
+num_cmdline_args = command_argument_count()
 
-if (retval == 1) then
-  stop 1
-else if (retval == 2) then
-  stop 2
-else
-  stop 0
-endif 
+if (num_cmdline_args /= 3) then
+   write(*,*) "# of command line arguments: ", num_cmdline_args
+   write(*,*) "Error: exactly three command line parameters are required"
+   write(*,*) "       - fail/succeed            (first parameter)"
+   write(*,*) "       - output_matrix_file_*    (second parameter)"
+   write(*,*) "             * = none, accurate, inaccurate or error"
+   write(*,*) "       - good_timing/bad_timing  (third parameter)"
+   stop 2
+end if
+
+! is an execution success or failure desired?
+call success_or_failure()
+
+!-------------------------
+
+! Is an output matrix file desired? If so, accurate or inaccurate (Quality Assurance)?
+call output_matrix_file()
+
+!-------------------------
+
+! Is a good (small) or bad (too large) timing desired
+! to be output to nep.error.000000? 
+call good_or_bad_timing()
 
 end program
+
