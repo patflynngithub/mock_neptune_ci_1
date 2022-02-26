@@ -6,3 +6,6 @@
 *.smod
 main_1
 build/
+matrix.txt
+nep.error.000000
+
