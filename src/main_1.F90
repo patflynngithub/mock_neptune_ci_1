@@ -23,7 +23,7 @@ num_cmdline_args = command_argument_count()
 
 if (num_cmdline_args /= 3) then
    write(*,*) "# of command line arguments: ", num_cmdline_args
-   write(*,*) "Error: exactly two command line parameters are required"
+   write(*,*) "Error: exactly three command line parameters are required"
    write(*,*) "       - fail/succeed            (first parameter)"
    write(*,*) "       - output_matrix_file_*    (second parameter)"
    write(*,*) "             * = none, accurate, inaccurate or error"
